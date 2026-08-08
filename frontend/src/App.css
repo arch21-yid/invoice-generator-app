@@ -1,0 +1,154 @@
+/* --- App.css --- */
+
+/* 1. Define Standardized Color Palettes (Navy + White) */
+:root {
+  /* Light Theme (Navy accents on White background) */
+  --bg-app: #ffffff;
+  --bg-panel: #f8fafc;
+  --text-main: #0f172a; /* Very dark navy */
+  --text-sub: #475569;
+  
+  --navy-primary: #1e3a8a; /* Standard Navy Blue */
+  --navy-hover: #172554;   /* Darker Navy for hover */
+  
+  --border-color: #cbd5e1; /* Light grey for subtle borders */
+  --border-hard: #0f172a;  /* Dark border for buttons/headers */
+  
+  --button-text: #ffffff;
+  --input-bg: #ffffff;
+}
+
+[data-theme='dark'] {
+  /* Dark Theme (Navy backgrounds with White text) */
+  --bg-app: #0f172a;   /* Darkest Navy */
+  --bg-panel: #1e293b;  /* Dark Navy */
+  --text-main: #f8fafc;  /* Almost White */
+  --text-sub: #cbd5e1;
+  
+  --navy-primary: #3b82f6; /* Lighter Blue for visibility in dark mode */
+  --navy-hover: #60a5fa;
+  
+  --border-color: #334155;
+  --border-hard: #f8fafc;  /* Light border for dark mode */
+  
+  --button-text: #0f172a; /* Dark text on light blue buttons */
+  --input-bg: #1e293b;
+}
+
+/* 2. Global Reset and Base Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--bg-app);
+  color: var(--text-main);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.app-container {
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* 3. Header and Navigation (Bordered) */
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: var(--bg-panel);
+  
+  /* Apply prominent border lines */
+  border: 2px solid var(--border-hard);
+  border-radius: 8px;
+  margin-bottom: 30px;
+}
+
+.brand-h1 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--navy-primary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.header-controls {
+  display: flex;
+  gap: 15px;
+}
+
+/* 4. Button Styles (Bordered) */
+.btn-ui {
+  padding: 10px 20px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: transparent;
+  
+  /* Required: Border lines */
+  border: 2px solid var(--border-hard);
+  border-radius: 4px;
+  color: var(--text-main);
+}
+
+.btn-ui:hover {
+  background-color: var(--border-hard);
+  color: var(--bg-app); /* Invert colors on hover */
+}
+
+/* Special styling for primary action buttons */
+.btn-primary {
+  background-color: var(--navy-primary);
+  color: var(--button-text);
+  border-color: var(--navy-primary);
+}
+
+.btn-primary:hover {
+  background-color: var(--navy-hover);
+  border-color: var(--navy-hover);
+}
+
+/* 5. Main Content Area */
+.content-area {
+  padding: 20px;
+  background-color: var(--bg-panel);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+}
+
+.section-title {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  color: var(--text-main);
+}
+
+.section-subtitle {
+  color: var(--text-sub);
+  margin-bottom: 30px;
+}
+
+/* 6. Form/Input Styling example (Bordered) */
+.form-group {
+  margin-bottom: 15px;
+  max-width: 400px;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.form-input {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid var(--border-hard); /* Strict border line */
+  border-radius: 4px;
+  background-color: var(--input-bg);
+  color: var(--text-main);
+}
